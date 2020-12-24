@@ -1,0 +1,3 @@
+#include "/home/osman/.Xresource.d/xterm"
+!xterm*faceName: Lucidasans
+!xterm*faceSize: 10 
