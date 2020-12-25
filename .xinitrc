@@ -60,5 +60,5 @@ setxkbmap -model pc104 -layout tr -variant f
 xmodmap -e 'keycode 135=Super_L'
 sxhkd &
 picom &
-wal -R
+wal -R &
 exec bspwm -c $HOME/.config/bspwm/bspwmrc

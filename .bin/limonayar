@@ -20,7 +20,10 @@ Workspaces() {
 }
 
 Update(){
-    echo -e "%{l}$(Workspaces)"
+    # echo -e "%{S0}%{l}$(Workspaces)"
+    echo -e "%{S0}%{l}$(Workspaces)%{S1}%{l}$(Workspaces)"
+    # echo  "%{S1}%{l}$(Workspaces)"
+    # echo -e "%{S+}Heyo"
 }
 while true; do
     Update
