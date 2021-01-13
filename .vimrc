@@ -4,6 +4,7 @@
         Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
         "Search
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+        Plug 'junegunn/fzf.vim'
         "Completer
         " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --java-completer' }
          Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
@@ -201,7 +202,8 @@ let g:syntastic_check_on_wq = 0
 "<KEYMAPS>        
     let mapleader=","
     let maplocalleader = "\\"
-    map <leader>f :FZF<CR>
+    map <leader>f :Rg<CR>
+    map <leader>g :Rg<CR>
     map<leader>fd :FZF ../<CR>
     map<leader>fdd :FZF ../../<CR>
 
@@ -322,4 +324,3 @@ nnoremap z= :call FzfSpell()<CR>
 set spelllang=en_us
 " imap <C-l> <c-g>u<Esc>[sz=`]a<c-g>u
 imap <C-l> <c-g>u<Esc>[sz=a<c-g>u
-
