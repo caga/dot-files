@@ -202,7 +202,7 @@ let g:syntastic_check_on_wq = 0
 "<KEYMAPS>        
     let mapleader=","
     let maplocalleader = "\\"
-    map <leader>f :Rg<CR>
+    map <leader>f :Files<CR>
     map <leader>g :Rg<CR>
     map<leader>fd :FZF ../<CR>
     map<leader>fdd :FZF ../../<CR>
