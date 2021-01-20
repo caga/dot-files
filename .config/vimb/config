@@ -1,5 +1,4 @@
 # Homepage that vimb opens if started without a URI.
-/* set home-page=about:blank */
 set home-page=https://fanglingsu.github.io/vimb/
 
 # Path to the default download directory. If no download directory is set,
@@ -10,7 +9,7 @@ set download-path=~/tmp/
 # Command with placeholder '%s' called if form field is opened with $EDITOR to
 # spawn the editor-like `x-terminal-emulator -e vim %s'. To use Gvim as the
 # editor, it's necessary to call it with `-f' to run it in the foreground.
-set editor-command=termite -e "nvim %s"
+set editor-command=xterm -e "vim %s"
 
 # If enabled the inputbox will be hidden whenever it contains no text.
 set input-autohide=true
