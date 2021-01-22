@@ -182,6 +182,7 @@ let g:syntastic_check_on_wq = 0
 "<Basic Ayarlar>"
     filetype plugin indent on
     syntax on
+    noremap <F4> :set hlsearch! hlsearch?<CR>
     set number
     set foldmethod=manual
             colorscheme wal

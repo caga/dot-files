@@ -56,6 +56,8 @@ shortcut-add d=http://dict.cc/?s=$0
 shortcut-add g=https://encrypted.google.com/search?q=$0
 shortcut-add y=http://www.youtube.com/results?search_query=$0
 shortcut-add s=https://www.startpage.com/do/dsearch?query=$0
+shortcut-add dev=172.26.140.25:8000
+shortcut-add loc=localhost:8000
 
 # Set the shortcut as the default, that is the shortcut to be used if no
 # shortcut is given and the string to open is not an URI.
