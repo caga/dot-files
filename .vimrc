@@ -185,13 +185,6 @@ let g:syntastic_check_on_wq = 0
     noremap <F4> :set hlsearch! hlsearch?<CR>
     set number
     set foldmethod=manual
-            colorscheme wal
-            set background=dark
-            let &t_ZH="\e[3m"
-            let &t_ZR="\e[23m"
-            " set t_ZH=[3m
-            " set t_ZR=[23m
-            highlight Comment cterm=italic
     " set conceallevel=0
 " autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 "<BASIC TAB SPACING FOR HTML>
@@ -325,3 +318,10 @@ nnoremap z= :call FzfSpell()<CR>
 set spelllang=en_us
 " imap <C-l> <c-g>u<Esc>[sz=`]a<c-g>u
 imap <C-l> <c-g>u<Esc>[sz=a<c-g>u
+            colorscheme wal
+            set background=dark
+            let &t_ZH="\e[3m"
+            let &t_ZR="\e[23m"
+            " set t_ZH=[3m
+            " set t_ZR=[23m
+            highlight Comment cterm=italic
