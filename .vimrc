@@ -5,6 +5,8 @@
         "Search
         Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
         Plug 'junegunn/fzf.vim'
+        "vifm for vim
+        Plug 'vifm/vifm.vim'
         "Completer
         " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --java-completer' }
          Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
@@ -59,6 +61,8 @@
         Plug 'dylanaraps/wal.vim'
         " Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
     call plug#end()
+"<vifm>"
+let g:vifm_embed_term=1
 "<Syntastic>
 
 set statusline+=%#warningmsg#
