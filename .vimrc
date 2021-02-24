@@ -13,9 +13,9 @@
         "commentator
          Plug 'tpope/vim-commentary'
         "Otomatik xml tag kapama
-        " Plug 'othree/xml.vim'
+        Plug 'othree/xml.vim'
         " indentation line
-        " Plug 'Yggdroot/indentLine'
+        Plug 'Yggdroot/indentLine'
         "surround
         Plug 'tpope/vim-surround'
         "html xml tag closer
@@ -38,7 +38,7 @@
         "Vebuuger için gerekli
         " Plug 'Shougo/vimproc.vim'
         "Vim-matchit % operator
-        " Plug 'https://github.com/adelarsq/vim-matchit'
+        Plug 'https://github.com/adelarsq/vim-matchit'
         "otomatik parantez tırnak felan kapama
         " Plug 'adelarsq/Vim-Autoclose'
         "Serbest Yazı"
@@ -61,6 +61,7 @@
         Plug 'dylanaraps/wal.vim'
         " Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
     call plug#end()
+packadd! matchit
 "<vifm>"
 let g:vifm_embed_term=1
 "<Syntastic>
@@ -208,6 +209,7 @@ let g:syntastic_check_on_wq = 0
     map <space>f :tab split<CR>
     map <space>k :tabc<CR>
     imap kj <esc>
+    map <leader>e :Vifm<CR>
     " noremap <nowait> t h
     " noremap <nowait> k j
     " noremap <nowait> m k
