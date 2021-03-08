@@ -53,11 +53,12 @@ fi
 #xterm -geometry 80x50+494+51 &
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
-doas .bin/internet.sh
-setxkbmap -model pc104 -layout tr -variant f
- xmodmap -e 'keycode 52= j J j J less VoidSymbol less'
- xmodmap -e 'keycode 53=  odiaeresis Odiaeresis odiaeresis Odiaeresis greater VoidSymbol greater'
-xmodmap -e 'keycode 135=Super_L'
+doas .bin/internet.sh 
+setxkbmap -model pc104 -layout tr -variant f 
+xmodmap -e 'keycode 52= j J j J less VoidSymbol less' 
+xmodmap -e 'keycode 53=  odiaeresis Odiaeresis odiaeresis Odiaeresis greater VoidSymbol greater'
+xmodmap -e 'keycode 135=Super_L' 
+setxkbmap -option lv3:lalt_switch
 sxhkd &
 picom &
 wal -R &
