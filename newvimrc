@@ -1,0 +1,30 @@
+" Başlangıç:9 Mart 2021
+" Edit:
+"<Vim-Plugins>
+call plug#begin('~/.vim/plugged')
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'vifm/vifm.vim'
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+    Plug 'tweekmonster/django-plus.vim' 
+    Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+    " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+call plug#end()
+
+"<Basic Ayarlar>"
+
+filetype plugin indent on
+syntax on
+
+"<Basic Mapping>
+    let mapleader=","
+    map <space>f :tab split<CR>
+    map <space>k :tabc<CR>
+    imap kj <esc>
+"<shiftwidt,tabstop and softtabstop for Python Files>
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
+
