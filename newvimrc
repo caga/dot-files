@@ -10,21 +10,52 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+    Plug 'vim-scripts/taglist.vim'
     " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
 "<Basic Ayarlar>"
 
-filetype plugin indent on
-syntax on
+    filetype plugin indent on
+    syntax on
 
-"<Basic Mapping>
-    let mapleader=","
-    map <space>f :tab split<CR>
-    map <space>k :tabc<CR>
-    imap kj <esc>
-"<shiftwidt,tabstop and softtabstop for Python Files>
-autocmd FileType python set sw=4
-autocmd FileType python set ts=4
-autocmd FileType python set sts=4
+    "<Basic Key Mapping>
+        let mapleader=","
+        map <space>f :tab split<CR>
+        map <space>k :tabc<CR>
+        imap kj <esc>
+        "<system vim clipboard mappings>
+        noremap <Leader>y "*y
+        noremap <Leader>p "*p
+        noremap <Leader>Y "+y
+        noremap <Leader>P "+p
 
+    "<shiftwidt,tabstop and softtabstop for Python Files>
+    autocmd FileType python set sw=4
+    autocmd FileType python set ts=4
+    autocmd FileType python set sts=4
+
+" <PLUGin Settings>
+
+    " <YOUCOMPLETEME>
+        let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+        let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+        let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+        let g:ycm_complete_in_comments = 1 " Completion in comments
+        let g:ycm_complete_in_strings = 1 " Completion in string
+
+    " <Ultisnips>
+        let g:UltiSnipsExpandTrigger       = "<c-j>"
+        let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+        let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+        let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
+
+    "<Surround>
+        let g:surround_{char2nr("v")} = "{{ \r }}"
+        let g:surround_{char2nr("{")} = "{{ \r }}"
+        let g:surround_{char2nr("%")} = "{% \r %}"
+        let g:surround_{char2nr("b")} = "{% block \1block name: \1 %}\r{% endblock \1\1 %}"
+        let g:surround_{char2nr("i")} = "{% if \1condition: \1 %}\r{% endif %}"
+        let g:surround_{char2nr("w")} = "{% with \1with: \1 %}\r{% endwith %}"
+        let g:surround_{char2nr("f")} = "{% for \1for loop: \1 %}\r{% endfor %}"
+        let g:surround_{char2nr("c")} = "{% comment %}\r{% endcomment %}"
