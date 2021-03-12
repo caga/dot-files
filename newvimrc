@@ -1,13 +1,13 @@
 " Başlangıç:9 Mart 2021
 " Edit:
 "<Vim-Plugins>
-call plug#begin('~/.vim/plugged')
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
-    Plug 'vifm/vifm.vim'
-    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-    Plug 'tweekmonster/django-plus.vim' 
-    " Plug 'vim-syntastic/syntastic'
+call plug#begin('~/.vim/plugged') " https://github.com/junegunn/vim-plug
+    Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
+    Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
+    Plug 'vifm/vifm.vim' " https://github.com/vifm/vifm.vim
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' " https://github.com/SirVer/ultisnips  " https://github.com/honza/vim-snippets
+    Plug 'tweekmonster/django-plus.vim' " https://github.com/tweekmonster/django-plus.vim 
+    Plug 'vim-syntastic/syntastic' " https://github.com/vim-syntastic/syntastic
     Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim' " https://github.com/junegunn/fzf.vim
     Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' } " https://github.com/ycm-core/YouCompleteMe
@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline' " https://github.com/vim-airline/vim-airline
     Plug 'dense-analysis/ale' " https://github.com/dense-analysis/ale
     Plug 'sillybun/vim-repl' " https://github.com/sillybun/vim-repl
-    " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' } " https://github.com/python-mode/python-mode
 call plug#end()
 
 "<Basic Ayarlar>"
@@ -43,9 +43,29 @@ call plug#end()
 	" <fzf>
 	map <leader>f :Files<CR>
 	map <leader>g :Rg<CR>
+	map <leader><Enter> :Buf<CR>
 
 	"<vifm>
 	map <leader>e :Vifm<CR>
+
+	"<vim-repl>
+	nnoremap <leader>r :REPLToggle <CR>
+	map <leader>h :REPLHide <CR>
+	
+	" <youcompleteme>
+	nnoremap<leader>ü :YcmCompleter GoTo<CR>
+
+
+	autocmd Filetype python nnoremap <leader>1 <Esc>:REPLDebug<Cr>
+	autocmd Filetype python nnoremap <leader>2 <Esc>:REPLPDBN<Cr>
+	autocmd Filetype python nnoremap <leader>3 <Esc>:REPLPDBS<Cr>" nnoremap <leader> d :REPLDebug
+	autocmd Filetype python nnoremap <leader>4 <Esc>:REPLDebugStopAtCurrentLine<Cr>
+	" autocmd Filetype python nnoremap <leader><ESC>b :REPLDebugStopAtCurrentLine<CR>
+	" autocmd Filetype python nnoremap <leader><ESC>k :REPLPDBN<CR>
+	" autocmd Filetype python nnoremap <leader><ESC>m :REPLPDBS<CR>
+	
+	"<taglist>
+	nnoremap <silent>t :TlistToggle<CR>
 
 " <PLUGin Settings>
 
@@ -78,12 +98,24 @@ call plug#end()
 	let g:ale_fix_on_save=1
 
     "<Syntastic>
-    "    set statusline+=%#warningmsg#
-    "    set statusline+=%{SyntasticStatuslineFlag()}
-    "    set statusline+=%*
+       set statusline+=%#warningmsg#
+       set statusline+=%{SyntasticStatuslineFlag()}
+       set statusline+=%*
 
-    "    let g:syntastic_always_populate_loc_list = 1
-    "    let g:syntastic_auto_loc_list = 1
-    "    let g:syntastic_check_on_open = 1
-    "    let g:syntastic_check_on_wq = 0
+       let g:syntastic_always_populate_loc_list = 1
+       let g:syntastic_auto_loc_list = 1
+       let g:syntastic_check_on_open = 1
+       let g:syntastic_check_on_wq = 0
+       let g:syntastic_python_checkers=['pylint']
 
+	" <Fzf>
+    " Open files in vertical horizontal split
+    nnoremap <silent> <Leader>v :call fzf#run({
+    \   'right': winwidth('.') / 2,
+    \   'sink':  'vertical botright split' })<CR>
+
+    " Open files in horizontal split
+    nnoremap <silent> <Leader>s :call fzf#run({
+    \   'down': '40%',
+    \   'sink': 'botright split' })<CR>
+    
